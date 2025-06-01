@@ -1,6 +1,6 @@
 ---
-description:
-globs:
+description: 
+globs: 
 alwaysApply: false
 ---
 # Create a High-Quality Pull Request
@@ -24,7 +24,7 @@ Use this information before running the remaining steps.
     - **Confirm:** Re-run `git status` to ensure all intended changes for this PR are now staged.
 
 1.  **Audit Staged Files (Critical Check)**
-    - **Verify `.gitignore**:** Ensure your project's `.gitignore` file is up-to-date and correctly excludes all unwanted files (e.g., local environment files, build artifacts, logs, secrets).
+    - **Verify `.gitignore`:** Ensure your project's `.gitignore` file is up-to-date and correctly excludes all unwanted files (e.g., local environment files, build artifacts, logs, secrets).
     - **Review Staged List:** Execute `git status` again. Meticulously review the final list of files staged for commit.
     - **Identify Unwanted Files:** Look for any files that should *not* be part of the repository or this specific PR (e.g., secrets, large binaries, temporary files). Standard configuration files like `.vscode/`, `.cursor/`, `.editorconfig` are generally acceptable if intended for the project.
     - **Remediate if Unwanted Files Found:**
@@ -36,15 +36,47 @@ Use this information before running the remaining steps.
 
 2.  **Draft Pull Request Body**
     - **Create/Update PR Body File:** Prepare the PR description in a file named `docs/pr/pr-body-file-<branch-name>.md` (replace `<branch-name>` with your current Git branch name).
-    - **Structure for Clarity:** Use Markdown with clear headings:
-        - `## Summary`
-        - `## Key Changes`
-        - `## Testing Done` (or `## How to Verify`)
-        - `## Related Issues` (e.g., `Fixes #123`, `Closes #456`, `Addresses #789`)
+    - **Use Standard Template:** Structure your PR body using this template:
+
+    ```markdown
+    ## 📝 Summary
+
+    Briefly explain what this PR changes or adds. Include context if it helps reviewers understand the goal.
+
+    ## 📂 Changes
+
+    - [ ] Feature
+    - [ ] Bugfix
+    - [ ] Refactor
+    - [ ] Documentation
+    - [ ] Rule update (`.cursor/rules`)
+    - [ ] Other (please explain below)
+
+    ## ✅ What's Included
+
+    List key updates, files touched, or changes made.
+
+    - Added/Updated rules in `.cursor/rules/`
+    - Updated context files or metadata
+    - Modified code based on rule guidance
+    - Adjusted structure for better AI context
+
+    ## 🧪 How to Test
+
+    Steps or commands to verify this PR. Include how to test rule behavior if relevant.
+
+    ```bash
+    # Example
+    cursor run test
+    npm run dev
+    ```
+    ```
+
     - **Lead with the Goal:** The `Summary` should start with a concise statement of the PR's primary purpose and impact.
-    - **Detail Key Changes:** Under `Key Changes`, use bullet points (`- `) to list significant additions, fixes, or features. Be specific about files or modules affected if it aids understanding.
-    - **Provide Context & Rationale:** Briefly explain the 'why' behind the changes. Link to issue trackers or design documents if applicable.
-    - **Describe Verification:** Under `Testing Done`, detail the testing performed (unit, integration, manual steps). If manual verification is needed by reviewers, provide clear, actionable steps.
+    - **Check Appropriate Boxes:** In the `Changes` section, check all boxes that apply to your PR.
+    - **Detail Key Changes:** Under `What's Included`, use bullet points to list significant additions, fixes, or features. Be specific about files or modules affected.
+    - **Provide Context & Rationale:** Briefly explain the 'why' behind the changes in the Summary section.
+    - **Describe Verification:** Under `How to Test`, detail the testing performed and provide clear, actionable steps for reviewers.
     - **Save:** Ensure the PR body file is saved.
 
 3.  **Execute Project Update Rules (If Applicable)**
