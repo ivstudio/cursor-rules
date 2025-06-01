@@ -25,3 +25,10 @@ For monorepos or modular projects, add `.cursor/rules` folders to subdirectories
 - [cursor directory](https://cursor.directory/)
 - [awesome cursor rules](https://github.com/PatrickJS/awesome-cursorrules?tab=readme-ov-file#utilities)
 - [johnlindquist rules](https://github.com/johnlindquist/cursor-demos/blob/main/.cursor/rules/prompt-improve.mdc)
+
+## 📂 Current Rules
+
+This repository contains organized cursor rules in `.cursor/rules/`:
+
+- **Git Rules** (`git/`) - Conventional commits and PR guidelines
+- **AI Behavior** - Prompt improvement guidelines
