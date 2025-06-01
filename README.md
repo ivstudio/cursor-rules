@@ -16,9 +16,7 @@ In this repo, you’ll find rules I use across my own projects, along with a cur
 
 - Create the `.cursor/rules` directory
 at the root of your repo. Cursor looks here automatically.
-
 - Write one rule file per topic (e.g., api-guidelines.mdc, frontend-rules.mdc). Keep each focused and readable.
-
 - Scope rules when needed
 For monorepos or modular projects, add `.cursor/rules` folders to subdirectories. Cursor will apply those rules only when relevant files are involved.
 
@@ -26,3 +24,4 @@ For monorepos or modular projects, add `.cursor/rules` folders to subdirectories
 
 - [cursor directory](https://cursor.directory/)
 - [awesome cursor rules](https://github.com/PatrickJS/awesome-cursorrules?tab=readme-ov-file#utilities)
+- [johnlindquist rules](https://github.com/johnlindquist/cursor-demos/blob/main/.cursor/rules/prompt-improve.mdc)
